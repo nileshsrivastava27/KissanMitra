@@ -13,7 +13,7 @@ export default function ZameenInfo() {
   const [plantDate, setPlantDate] = useState("2023-08-18");
 
   const fetchLandDetails = async () => {
-    const fetchedData = await axios.post("http://localhost:5000/api/landdata", {
+    const fetchedData = await axios.post("http://localhost:8000/api/landdata", {
       id: params.zameenid,
     });
     setLandData(fetchedData.data);
@@ -21,7 +21,7 @@ export default function ZameenInfo() {
   };
 
   const fetchCropDetails = async () => {
-    const fetchData = await axios.post("http://localhost:5000/api/cropdata", {
+    const fetchData = await axios.post("http://localhost:8000/api/cropdata", {
       id: params.zameenid,
     });
     setCropData(fetchData.data);
@@ -38,7 +38,7 @@ export default function ZameenInfo() {
 
   const handleSubmitCrop = async (e) => {
     // preventDefault(e);
-    await axios.post("http://localhost:5000/api/addcrop", {
+    await axios.post("http://localhost:8000/api/addcrop", {
       user_id: Cookies.get("id"),
       land_id: params.zameenid,
       cropName: selectedOption,

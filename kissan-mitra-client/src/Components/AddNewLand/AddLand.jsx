@@ -109,7 +109,7 @@ const AddLand = () => {
   }
 
   const handlesubmit = ()=>{
-    axios.post("http://localhost:5000/api/addland",formData).then((res)=>{
+    axios.post("http://localhost:8000/api/addland",formData).then((res)=>{
       navigate("/");
     })
   }

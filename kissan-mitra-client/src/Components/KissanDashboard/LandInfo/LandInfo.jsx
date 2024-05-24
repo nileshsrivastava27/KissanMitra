@@ -64,7 +64,7 @@ export default function LandInfo() {
     ]
 
     const fetchLandDetails=async () =>{
-        const fetchedData = await axios.post("http://localhost:5000/api/userlanddata",{id:Cookies.get("id")});
+        const fetchedData = await axios.post("http://localhost:8000/api/userlanddata",{id:Cookies.get("id")});
         setLandData(fetchedData.data);
     }
 
